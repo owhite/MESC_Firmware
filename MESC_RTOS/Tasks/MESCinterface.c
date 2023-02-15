@@ -237,12 +237,17 @@ void populate_vars(){
 
 
 	TermVariableDescriptor * desc;
-	desc = TERM_addVar(mtr[0].Conv.Vbus					, 0.0f		, HUGE_VAL  , "vbus"		, "Read input voltage"					, VAR_ACCESS_TR  , NULL		, &TERM_varList);
+	desc = TERM_addVar(mtr[0].Conv.Vbus			, 0.0f		, HUGE_VAL  , "vbus"		, "Read input voltage"					, VAR_ACCESS_TR  , NULL		, &TERM_varList);
 	TERM_setFlag(desc, FLAG_TELEMETRY_ON);
 
-	desc = TERM_addVar(mtr[0].FOC.eHz					    , -HUGE_VAL , HUGE_VAL  , "ehz"			, "Motor electrical hz"					, VAR_ACCESS_TR  , NULL		, &TERM_varList);
+	desc = TERM_addVar(mtr[0].FOC.eHz			, -HUGE_VAL , HUGE_VAL  , "ehz"			, "Motor electrical hz"					, VAR_ACCESS_TR  , NULL		, &TERM_varList);
 	TERM_setFlag(desc, FLAG_TELEMETRY_ON);
 
+	desc = TERM_addVar(mtr[0].FOC.Idq_smoothed.d		, -HUGE_VAL , HUGE_VAL  , "idq_d"			, "Phase Idq_d smoothed"					, VAR_ACCESS_TR  , NULL		, &TERM_varList);
+	TERM_setFlag(desc, FLAG_TELEMETRY_ON);
+
+	desc = TERM_addVar(mtr[0].FOC.Idq_smoothed.q		, -HUGE_VAL , HUGE_VAL  , "idq_q"			, "Phase Idq_q smoothed"					, VAR_ACCESS_TR  , NULL		, &TERM_varList);
+	TERM_setFlag(desc, FLAG_TELEMETRY_ON);
 }
 
 

@@ -8,14 +8,14 @@
 #ifndef INC_MP2_V0_1_H_
 #define INC_MP2_V0_1_H_
 //Pick a motor for default
-#define MCMASTER_70KV_8080//QS165//CA120//
+#define QS165
 #define PWM_FREQUENCY 20000
 #define CUSTOM_DEADTIME 800 //ns, MAX 1500ns! implementation in MESCInit().
 
 #define SHUNT_POLARITY -1.0f
 
-#define ABS_MAX_PHASE_CURRENT 120.0f
-#define ABS_MAX_BUS_VOLTAGE 45.0f
+#define ABS_MAX_PHASE_CURRENT 100.0f
+#define ABS_MAX_BUS_VOLTAGE 52.0f
 #define ABS_MIN_BUS_VOLTAGE 38.0f
 #define R_SHUNT 0.00033f
 #define OPGAIN 10.5f
@@ -24,7 +24,7 @@
 #define R_VBUS_TOP 100000.0f
 
 #define MAX_ID_REQUEST 2.0f
-#define MAX_IQ_REQUEST 70.0f
+#define MAX_IQ_REQUEST 20.0f
 
 #define SEVEN_SECTOR		//Normal SVPWM implemented as midpoint clamp. If not defined, you will get 5 sector, bottom clamp
 #define DEADTIME_COMP		//This injects extra PWM duty onto the timer which effectively removes the dead time.
@@ -56,11 +56,11 @@
 //#define DEFAULT_HFI_TYPE HFI_TYPE_D
 //#define DEFAULT_HFI_TYPE HFI_TYPE_SPECIAL
 
-//#define USE_HALL_START
+#define USE_HALL_START
 #define HALL_VOLTAGE_THRESHOLD 1.5f
 
 //#define USE_ENCODER //Only supports TLE5012B in SSC mode using onewire SPI on SPI3 F405...
-#define POLE_PAIRS 10
+#define POLE_PAIRS 7
 #define ENCODER_E_OFFSET 25000
 #define POLE_ANGLE (65536/POLE_PAIRS)
 
