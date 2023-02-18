@@ -18,6 +18,7 @@
  */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
+/* this works with term */ 
 #include "main.h"
 #include "cmsis_os.h"
 #include "usb_device.h"
